@@ -2,7 +2,7 @@ import asyncio
 import time
 import os
 from gtts import gTTS
-from telegram import Update, ReactionTypeEmoji, ChatType
+from telegram import Update, ReactionTypeEmoji
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters
 
 # ==========================================
