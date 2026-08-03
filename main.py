@@ -336,7 +336,8 @@ def main():
     custom_req = HTTPXRequest(connect_timeout=30.0, read_timeout=30.0)
     app = Application.builder().token(MASTER_TOKEN).request(custom_req).build()
 
-    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, process_custom_commands))
+    # Yahan ~filters.COMMAND ko hata diya hai taaki /m command block na ho
+    app.add_handler(MessageHandler(filters.TEXT, process_custom_commands))
 
     logging.info("SIREN v3.8 Slash Prefix Framework initialized successfully.")
     app.run_polling()
